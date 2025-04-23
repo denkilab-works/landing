@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HiBars3, HiXMark } from "react-icons/hi2";
-import { HiBolt } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -37,7 +36,7 @@ export default function Header() {
               className="flex items-center space-x-2"
               onClick={closeMenu}
             >
-              <HiBolt className="h-8 w-8 text-primary" />
+              <img src="/denkilab-logo.webp" className="size-8" alt="Logo" />
               <span className="font-heading font-bold text-xl">DenkiLab</span>
             </Link>
           </div>

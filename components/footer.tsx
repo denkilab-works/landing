@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { HiBolt } from "react-icons/hi2";
 import { SiLinkedin, SiX } from "react-icons/si";
 
 export default function Footer() {
@@ -10,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center space-x-2">
-              <HiBolt className="h-6 w-6 text-primary" />
+              <img src="/denkilab-logo.webp" className="size-8" alt="Logo" />
               <span className="font-heading font-bold text-xl">DenkiLab</span>
             </div>
             <p className="text-muted-foreground max-w-xs">

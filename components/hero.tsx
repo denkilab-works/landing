@@ -112,7 +112,11 @@ export default function Hero() {
               {/* Central element */}
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-primary/20 backdrop-blur-md rounded-full flex items-center justify-center">
                 <div className="w-36 h-36 bg-secondary rounded-full flex items-center justify-center gradient-border">
-                  <HiBolt className="h-12 w-12 text-primary" />
+                  <img
+                    src="/denkilab-logo.webp"
+                    className="size-28"
+                    alt="Logo"
+                  />
                 </div>
               </div>
             </div>
