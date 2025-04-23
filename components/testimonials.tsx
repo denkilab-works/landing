@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { motion, useInView } from "framer-motion"
-import { Quote } from "lucide-react"
+import { useRef } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { motion, useInView } from "framer-motion";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -35,11 +35,11 @@ const testimonials = [
     role: "Marketing Director, TechSolutions",
     avatar: "DW",
   },
-]
+];
 
 export default function Testimonials() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <section id="testimonials" className="py-20 md:py-28 w-full">
@@ -55,12 +55,16 @@ export default function Testimonials() {
               Client <span className="gradient-text">Testimonials</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our clients have to say about working with us.
+              Don't just take our word for it. Here's what our clients have to
+              say about working with us.
             </p>
           </motion.div>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+        >
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -70,7 +74,7 @@ export default function Testimonials() {
             >
               <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50">
                 <CardContent className="p-6">
-                  <Quote className="h-8 w-8 text-primary mb-4 opacity-70" />
+                  <FaQuoteLeft className="h-8 w-8 text-primary mb-4 opacity-70" />
                   <p className="text-lg mb-6 italic">"{testimonial.quote}"</p>
                   <div className="flex items-center">
                     <Avatar className="h-10 w-10 mr-4">
@@ -82,7 +86,9 @@ export default function Testimonials() {
                     </Avatar>
                     <div>
                       <p className="font-medium">{testimonial.author}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -92,5 +98,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

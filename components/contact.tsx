@@ -1,31 +1,37 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
-import { motion, useInView } from "framer-motion"
-import { Mail, MapPin, Phone, Send, CheckCircle } from "lucide-react"
+import { useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion, useInView } from "framer-motion";
+import {
+  HiEnvelope,
+  HiMapPin,
+  HiPhone,
+  HiPaperAirplane,
+  HiCheckCircle,
+} from "react-icons/hi2";
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-  }
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+  };
 
   return (
     <section id="contact" className="py-20 md:py-28 w-full">
@@ -41,7 +47,8 @@ export default function Contact() {
               Get in <span className="gradient-text">Touch</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Have a project in mind? Let's discuss how we can help bring your ideas to life.
+              Have a project in mind? Let's discuss how we can help bring your
+              ideas to life.
             </p>
           </motion.div>
         </div>
@@ -55,23 +62,28 @@ export default function Contact() {
             <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50">
               <CardContent className="p-6 space-y-6">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold font-heading">Contact Information</h3>
+                  <h3 className="text-2xl font-bold font-heading">
+                    Contact Information
+                  </h3>
                   <p className="text-muted-foreground">
-                    Fill out the form or contact us directly using the information below.
+                    Fill out the form or contact us directly using the
+                    information below.
                   </p>
                 </div>
 
                 <div className="space-y-4 pt-4">
                   <div className="flex items-start space-x-4">
-                    <Mail className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                    <HiEnvelope className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-muted-foreground">hello@byteforge.dev</p>
+                      <p className="text-muted-foreground">
+                        hello@byteforge.dev
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Phone className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                    <HiPhone className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium">Phone</p>
                       <p className="text-muted-foreground">+1 (555) 123-4567</p>
@@ -79,10 +91,12 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <MapPin className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                    <HiMapPin className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium">Office</p>
-                      <p className="text-muted-foreground">123 Tech Street, San Francisco, CA 94107</p>
+                      <p className="text-muted-foreground">
+                        123 Tech Street, San Francisco, CA 94107
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -106,21 +120,32 @@ export default function Contact() {
                 {isSubmitted ? (
                   <div className="h-full flex flex-col items-center justify-center text-center py-12 space-y-4">
                     <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center">
-                      <CheckCircle className="h-6 w-6 text-primary" />
+                      <HiCheckCircle className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="text-2xl font-bold font-heading">Message Sent!</h3>
+                    <h3 className="text-2xl font-bold font-heading">
+                      Message Sent!
+                    </h3>
                     <p className="text-muted-foreground max-w-md">
-                      Thank you for reaching out. We'll get back to you as soon as possible.
+                      Thank you for reaching out. We'll get back to you as soon
+                      as possible.
                     </p>
-                    <Button variant="outline" onClick={() => setIsSubmitted(false)} className="mt-4">
+                    <Button
+                      variant="outline"
+                      onClick={() => setIsSubmitted(false)}
+                      className="mt-4"
+                    >
                       Send Another Message
                     </Button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
-                      <h3 className="text-2xl font-bold font-heading">Send a Message</h3>
-                      <p className="text-muted-foreground">We'd love to hear from you. Fill out the form below.</p>
+                      <h3 className="text-2xl font-bold font-heading">
+                        Send a Message
+                      </h3>
+                      <p className="text-muted-foreground">
+                        We'd love to hear from you. Fill out the form below.
+                      </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -134,7 +159,12 @@ export default function Contact() {
                         <label htmlFor="email" className="text-sm font-medium">
                           Email
                         </label>
-                        <Input id="email" type="email" placeholder="Your email" required />
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="Your email"
+                          required
+                        />
                       </div>
                     </div>
 
@@ -142,7 +172,11 @@ export default function Contact() {
                       <label htmlFor="subject" className="text-sm font-medium">
                         Subject
                       </label>
-                      <Input id="subject" placeholder="Project inquiry" required />
+                      <Input
+                        id="subject"
+                        placeholder="Project inquiry"
+                        required
+                      />
                     </div>
 
                     <div className="space-y-2">
@@ -157,7 +191,11 @@ export default function Contact() {
                       />
                     </div>
 
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    <Button
+                      type="submit"
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? (
                         <span className="flex items-center">
                           <svg
@@ -185,7 +223,7 @@ export default function Contact() {
                       ) : (
                         <span className="flex items-center">
                           Send Message
-                          <Send className="ml-2 h-4 w-4" />
+                          <HiPaperAirplane className="ml-2 h-4 w-4" />
                         </span>
                       )}
                     </Button>
@@ -197,5 +235,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

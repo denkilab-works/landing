@@ -1,33 +1,34 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Zap, Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { cn } from "@/lib/utils"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { HiBars3, HiXMark } from "react-icons/hi2";
+import { HiBolt } from "react-icons/hi2";
+import { useTheme } from "next-themes";
+import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const toggleMenu = () => setIsOpen(!isOpen)
-  const closeMenu = () => setIsOpen(false)
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const navItems = [
     { name: "Services", href: "#services" },
@@ -35,20 +36,26 @@ export default function Header() {
     { name: "Portfolio", href: "#portfolio" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-md shadow-md" : "bg-transparent",
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md shadow-md"
+          : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
-              <Zap className="h-8 w-8 text-primary" />
+            <Link
+              href="/"
+              className="flex items-center space-x-2"
+              onClick={closeMenu}
+            >
+              <HiBolt className="h-8 w-8 text-primary" />
               <span className="font-heading font-bold text-xl">DenkiLab</span>
             </Link>
           </div>
@@ -63,20 +70,18 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <Button onClick={toggleTheme} variant="ghost" size="icon" className="ml-2">
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
             <Button asChild>
               <Link href="#contact">Get in Touch</Link>
             </Button>
           </nav>
 
           <div className="flex md:hidden">
-            <Button onClick={toggleTheme} variant="ghost" size="icon" className="mr-2">
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
             <Button onClick={toggleMenu} variant="ghost" size="icon">
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <HiXMark className="h-6 w-6" />
+              ) : (
+                <HiBars3 className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -114,5 +119,5 @@ export default function Header() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }

@@ -1,58 +1,79 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { motion, useInView } from "framer-motion"
-import { Smartphone, Globe, Palette, Database, Server, LineChart, Code, Zap } from "lucide-react"
+import { useRef } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { motion, useInView } from "framer-motion";
+import {
+  HiDevicePhoneMobile,
+  HiGlobeAmericas,
+  HiSwatch,
+  HiCircleStack,
+  HiServer,
+  HiCodeBracket,
+} from "react-icons/hi2";
+import { HiBolt } from "react-icons/hi2";
+import { FaChartLine } from "react-icons/fa";
 
 const services = [
   {
-    icon: <Smartphone className="h-10 w-10 text-primary" />,
+    icon: <HiDevicePhoneMobile className="h-10 w-10 text-primary" />,
     title: "Mobile Development",
     description:
       "Fast, beautiful Flutter apps for iOS and Android with seamless user experiences and native performance.",
   },
   {
-    icon: <Globe className="h-10 w-10 text-primary" />,
+    icon: <HiGlobeAmericas className="h-10 w-10 text-primary" />,
     title: "Web Development",
     description:
       "Modern web applications using React, Next.js, and Angular with responsive designs and optimized performance.",
   },
   {
-    icon: <Palette className="h-10 w-10 text-primary" />,
+    icon: <HiSwatch className="h-10 w-10 text-primary" />,
     title: "UI/UX Design",
-    description: "User-centered design that creates intuitive, engaging, and accessible digital experiences.",
+    description:
+      "User-centered design that creates intuitive, engaging, and accessible digital experiences.",
   },
   {
-    icon: <Code className="h-10 w-10 text-primary" />,
+    icon: <HiCodeBracket className="h-10 w-10 text-primary" />,
     title: "Backend Development",
-    description: "Powerful backend solutions using Rust, Python, Go, and Node.js for high-performance applications.",
+    description:
+      "Powerful backend solutions using Rust, Python, Go, and Node.js for high-performance applications.",
   },
   {
-    icon: <Server className="h-10 w-10 text-primary" />,
+    icon: <HiServer className="h-10 w-10 text-primary" />,
     title: "Cloud Services",
-    description: "Cloud infrastructure setup and management on AWS, Azure, and Google Cloud Platform.",
+    description:
+      "Cloud infrastructure setup and management on AWS, Azure, and Google Cloud Platform.",
   },
   {
-    icon: <Database className="h-10 w-10 text-primary" />,
+    icon: <HiCircleStack className="h-10 w-10 text-primary" />,
     title: "Database Solutions",
-    description: "Scalable database architecture with SQL and NoSQL solutions optimized for performance.",
+    description:
+      "Scalable database architecture with SQL and NoSQL solutions optimized for performance.",
   },
   {
-    icon: <LineChart className="h-10 w-10 text-primary" />,
+    icon: <FaChartLine className="h-10 w-10 text-primary" />,
     title: "Analytics & AI",
-    description: "Data analytics solutions and AI integration to drive business intelligence and automation.",
+    description:
+      "Data analytics solutions and AI integration to drive business intelligence and automation.",
   },
   {
-    icon: <Zap className="h-10 w-10 text-primary" />,
+    icon: <HiBolt className="h-10 w-10 text-primary" />,
     title: "Rapid Development",
-    description: "Agile processes and efficient workflows that deliver high-quality products in record time.",
+    description:
+      "Agile processes and efficient workflows that deliver high-quality products in record time.",
   },
-]
+];
 
 export default function Services() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <section id="services" className="py-20 md:py-28 w-full bg-secondary/20">
@@ -68,13 +89,16 @@ export default function Services() {
               Our <span className="gradient-text">Services</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              We offer a comprehensive range of software development services to help your business thrive in the
-              digital landscape.
+              We offer a comprehensive range of software development services to
+              help your business thrive in the digital landscape.
             </p>
           </motion.div>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+        >
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -88,7 +112,9 @@ export default function Services() {
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-muted-foreground text-sm">{service.description}</CardDescription>
+                  <CardDescription className="text-muted-foreground text-sm">
+                    {service.description}
+                  </CardDescription>
                 </CardContent>
               </Card>
             </motion.div>
@@ -96,5 +122,5 @@ export default function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }

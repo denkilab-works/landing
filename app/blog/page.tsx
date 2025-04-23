@@ -1,18 +1,26 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import Image from "next/image"
-import { getAllPosts } from "@/lib/blog"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { CalendarIcon, Clock } from "lucide-react"
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { getAllPosts } from "@/lib/blog";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { HiCalendar, HiClock } from "react-icons/hi2";
 
 export const metadata: Metadata = {
   title: "Blog | DenkiLab",
-  description: "Insights, tutorials, and news from the DenkiLab team on mobile and web development.",
-}
+  description:
+    "Insights, tutorials, and news from the DenkiLab team on mobile and web development.",
+};
 
 export default async function BlogPage() {
-  const posts = await getAllPosts()
+  const posts = await getAllPosts();
 
   return (
     <div className="container py-24 md:py-32">
@@ -21,7 +29,8 @@ export default async function BlogPage() {
           The <span className="gradient-text">DenkiLab</span> Blog
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          Insights, tutorials, and updates from our team of developers. We share what we're learning and building.
+          Insights, tutorials, and updates from our team of developers. We share
+          what we're learning and building.
         </p>
       </div>
 
@@ -42,7 +51,10 @@ export default async function BlogPage() {
               </div>
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-2">
-                  <Badge variant="outline" className="bg-primary/10 text-primary">
+                  <Badge
+                    variant="outline"
+                    className="bg-primary/10 text-primary"
+                  >
                     {post.category}
                   </Badge>
                 </div>
@@ -52,11 +64,11 @@ export default async function BlogPage() {
               <CardContent>
                 <div className="flex items-center space-x-4 text-xs text-muted-foreground">
                   <div className="flex items-center">
-                    <CalendarIcon className="mr-1 h-3 w-3" />
+                    <HiCalendar className="mr-1 h-3 w-3" />
                     <span>{post.date}</span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="mr-1 h-3 w-3" />
+                    <HiClock className="mr-1 h-3 w-3" />
                     <span>{post.readingTime} min read</span>
                   </div>
                 </div>
@@ -71,5 +83,5 @@ export default async function BlogPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }
