@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { HiBolt } from "react-icons/hi2";
 import { SiLinkedin, SiX } from "react-icons/si";
 
@@ -36,19 +35,19 @@ export default function Footer() {
             <h3 className="font-medium text-lg">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
               <Link
-                href="#services"
+                href="/#services"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 Services
               </Link>
               <Link
-                href="#about"
+                href="/#about"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 About Us
               </Link>
               <Link
-                href="#portfolio"
+                href="/#portfolio"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 Portfolio
@@ -60,7 +59,7 @@ export default function Footer() {
                 Blog
               </Link>
               <Link
-                href="#contact"
+                href="/#contact"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 Contact
