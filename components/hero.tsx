@@ -89,7 +89,7 @@ export default function Hero() {
                   ease: "easeInOut",
                   delay: 0.5,
                 }}
-                className="absolute top-1/3 right-0 p-4 bg-secondary rounded-lg shadow-lg"
+                className="absolute top-1/3 right-0 p-4 bg-secondary rounded-lg shadow-lg z-10"
               >
                 <HiGlobeAmericas className="h-8 w-8 text-primary" />
                 <p className="mt-2 text-sm font-medium">React & Next.js</p>
