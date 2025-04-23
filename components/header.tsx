@@ -1,50 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { HiBolt } from "react-icons/hi2";
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   const navItems = [
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
+    { name: "Services", href: "/#services" },
+    { name: "About", href: "/#about" },
+    { name: "Portfolio", href: "/#portfolio" },
     { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+        "bg-background/80 backdrop-blur-md shadow-md"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +53,7 @@ export default function Header() {
               </Link>
             ))}
             <Button asChild>
-              <Link href="#contact">Get in Touch</Link>
+              <Link href="/#contact">Get in Touch</Link>
             </Button>
           </nav>
 
@@ -109,7 +91,7 @@ export default function Header() {
                   </Link>
                 ))}
                 <Button asChild className="mt-2">
-                  <Link href="#contact" onClick={closeMenu}>
+                  <Link href="/#contact" onClick={closeMenu}>
                     Get in Touch
                   </Link>
                 </Button>
