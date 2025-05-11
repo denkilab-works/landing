@@ -1,0 +1,164 @@
+{
+  "hero": {
+    "title": "Nous Créons des",
+    "digitalProducts": "Produits Numériques",
+    "lightningSpeed": "à Vitesse Éclair",
+    "description": "Une petite équipe de développeurs passionnés créant des applications mobiles et web de pointe. Nous donnons vie à vos idées rapidement et efficacement.",
+    "chip": "Solutions Rapides & Innovantes",
+    "cta": "Commencer",
+    "viewOurWork": "Voir Nos Réalisations",
+    "rapidDelivery": "Livraison Rapide"
+  },
+  "navbar": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Services",
+    "contact": "Contact",
+    "cta" : "Contactez-Nous"
+  },
+  "partners": {
+    "title": "Fait confiance par des entreprises innovantes"
+  },
+  "services": {
+    "title": "Nos Services",
+    "description": "Nous offrons une gamme complète de services de développement logiciel pour aider votre entreprise à prospérer dans le paysage numérique.",
+    "mobile": {
+      "title": "Développement Mobile",
+      "description": "Applications Flutter rapides et élégantes pour iOS et Android avec des expériences utilisateur fluides et des performances natives."
+    },
+    "web": {
+      "title": "Développement Web",
+      "description": "Applications web modernes utilisant React, Next.js et Angular avec des designs responsifs et des performances optimisées."
+    },
+    "uiux": {
+      "title": "Design UI/UX",
+      "description": "Design centré sur l'utilisateur qui crée des expériences numériques intuitives, engageantes et accessibles."
+    },
+    "backend": {
+      "title": "Développement Backend",
+      "description": "Solutions backend puissantes utilisant Rust, Python, Go et Node.js pour des applications haute performance."
+    },
+    "cloud": {
+      "title": "Services Cloud",
+      "description": "Configuration et gestion d'infrastructure cloud sur AWS, Azure et Google Cloud Platform."
+    },
+    "database": {
+      "title": "Solutions de Base de Données",
+      "description": "Architecture de base de données évolutive avec des solutions SQL et NoSQL optimisées pour la performance."
+    },
+    "analytics": {
+      "title": "Analytique & IA",
+      "description": "Solutions d'analyse de données et intégration d'IA pour stimuler l'intelligence d'affaires et l'automatisation."
+    },
+    "rapid": {
+      "title": "Développement Rapide",
+      "description": "Processus agiles et flux de travail efficaces qui livrent des produits de haute qualité en un temps record."
+    }
+  },
+  "about": {
+    "title": "À Propos de",
+    "description1": "Nous sommes une petite équipe de développeurs passionnés qui font ce qu'ils aiment — créer des produits numériques exceptionnels avec rapidité et précision. Notre nom 'DenkiLab' combine le mot japonais pour électricité (Denki) avec 'Lab' pour représenter notre approche rapide et énergique du développement.",
+    "description2": "Être une équipe compacte nous permet de bouger rapidement, de communiquer efficacement et de livrer des résultats sans les contraintes des grandes agences. Nous sommes spécialisés dans Flutter pour le mobile, les frameworks web modernes et les solutions backend puissantes.",
+    "benefits": {
+      "small" : "Petite équipe agile de 3 développeurs",
+      "fast" : "Délais de livraison rapides",
+      "quality" : "Concentration sur la qualité du code",
+      "communication" : "Communication directe avec les développeurs",
+      "delivery" : "Approche de livraison continue",
+      "passion" : "Passion pour les nouvelles technologies"
+    }
+  },
+  "portfolio": {
+    "title": "Notre",
+    "description": "Explorez nos projets récents et découvrez comment nous avons aidé des entreprises à transformer leur présence numérique."
+  },
+  "blog": {
+    "title": "Notre",
+    "description": "Insights et tutoriels de notre équipe de développement. Nous partageons ce que nous apprenons et construisons.",
+    "cta": "Voir Tous les Articles"
+  },
+  "testimonials": {
+    "title": "Témoignages Clients",
+    "description": "Ne vous fiez pas seulement à notre parole. Voici ce que nos clients disent de leur collaboration avec nous.",
+    "testimonials": [
+      {
+        "content": "ByteForge a transformé notre entreprise avec une plateforme e-commerce personnalisée qui a augmenté nos ventes en ligne de 200% en seulement six mois.",
+        "author": {
+          "name": "Sarah Johnson",
+          "company": "Tech Solutions Inc.",
+          "image": "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content": "ByteForge a transformé notre entreprise avec une plateforme e-commerce personnalisée qui a augmenté nos ventes en ligne de 200% en seulement six mois.",
+        "author": {
+          "name": "Sarah Johnson",
+          "company": "Tech Solutions Inc.",
+          "image": "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content": "ByteForge a transformé notre entreprise avec une plateforme e-commerce personnalisée qui a augmenté nos ventes en ligne de 200% en seulement six mois.",
+        "author": {
+          "name": "Sarah Johnson",
+          "company": "Tech Solutions Inc.",
+          "image": "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content": "ByteForge a transformé notre entreprise avec une plateforme e-commerce personnalisée qui a augmenté nos ventes en ligne de 200% en seulement six mois.",
+        "author": {
+          "name": "Sarah Johnson",
+          "company": "Tech Solutions Inc.",
+          "image": "/testimonials/sarah.jpg"
+        }
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêt à transformer votre présence numérique ?",
+    "description": "Discutons de la façon dont notre expertise en développement logiciel peut aider votre entreprise à se développer. Planifiez une consultation gratuite dès aujourd'hui.",
+    "cta": "Contactez-Nous",
+    "explore": "Explorer Nos Services"
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "description": "Vous avez un projet en tête ? Discutons de la façon dont nous pouvons vous aider à donner vie à vos idées.",
+    "information": {
+      "title": "Informations de Contact",
+      "description": "Remplissez le formulaire ou contactez-nous directement en utilisant les informations ci-dessous.",
+      "email": "Email",
+      "phone": "Téléphone",
+      "office": "Bureau"
+    },
+    "form": {
+      "title": "Envoyez un Message",
+      "description": "Nous serions ravis d'avoir de vos nouvelles. Remplissez le formulaire ci-dessous.",
+      "name": "Nom",
+      "subject": "Sujet",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer le Message",
+      "placeholders" : {
+        "name" : "Votre Nom",
+        "subject" : "Inquiry",
+        "email" : "Votre Email",
+        "message" : "Tell us about your project..."
+      }
+    }
+  },
+  "footer": {
+    "title": "DenkiLab",
+    "description": "Nous construisons des applications web et mobiles de pointe en utilisant les dernières technologies.",
+    "links": {
+      "title": "Liens Rapides",
+      "services": "Services",
+      "about": "À Propos",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "copyright": "© 2025 DenkiLab. Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  }
+}

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { motion, useInView } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
-
+import { useTranslations } from "next-intl";
 const testimonials = [
   {
     quote:
@@ -38,6 +38,7 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const t = useTranslations("testimonials");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
@@ -52,11 +53,19 @@ export default function Testimonials() {
             className="space-y-4"
           >
             <h2 className="text-3xl md:text-4xl font-bold font-heading tracking-tight">
-              Client <span className="gradient-text">Testimonials</span>
+              {(() => {
+                const title = t("title");
+                const words = title.split(" ");
+                const lastWord = words.pop();
+                return (
+                  <>
+                    {words.join(" ")} <span className="gradient-text">{lastWord}</span>
+                  </>
+                );
+              })()}
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our clients have to
-              say about working with us.
+              {t("description")}
             </p>
           </motion.div>
         </div>

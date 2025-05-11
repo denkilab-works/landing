@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, useInView } from "framer-motion";
 import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 import Link from "next/link";
-
+import { useTranslations } from "next-intl";
 const projects = {
   web: [
     {
@@ -61,6 +61,7 @@ const projects = {
 };
 
 export default function Portfolio() {
+  const t = useTranslations("portfolio");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
@@ -75,11 +76,10 @@ export default function Portfolio() {
             className="space-y-4"
           >
             <h2 className="text-3xl md:text-4xl font-bold font-heading tracking-tight">
-              Our <span className="gradient-text">Portfolio</span>
+              {t("title")} <span className="gradient-text">Portfolio</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Explore our recent projects and see how we've helped businesses
-              transform their digital presence.
+              {t("description")}
             </p>
           </motion.div>
         </div>

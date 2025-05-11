@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi2";
-
+import { useTranslations } from "next-intl";
 export default function CTA() {
+  const t = useTranslations("cta");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
@@ -24,21 +25,20 @@ export default function CTA() {
 
           <div className="relative z-10 flex flex-col items-center text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold font-heading tracking-tight max-w-3xl">
-              Ready to transform your digital presence?
+              {t("title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Let's discuss how our software development expertise can help your
-              business grow. Schedule a free consultation today.
+              {t("description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="group">
                 <Link href="#contact">
-                  Get Started
+                  {t("cta")}
                   <HiArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="#services">Explore Services</Link>
+                <Link href="#services">{t("explore")}</Link>
               </Button>
             </div>
           </div>

@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { HiCalendar, HiArrowRight } from "react-icons/hi2";
-
+import { useTranslations } from "next-intl";
 // Sample blog posts for preview - in a real app, these would be fetched from the API
 const featuredPosts = [
   {
@@ -47,6 +47,7 @@ const featuredPosts = [
 ];
 
 export default function BlogPreview() {
+  const t = useTranslations("blog");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
@@ -61,11 +62,10 @@ export default function BlogPreview() {
             className="space-y-4"
           >
             <h2 className="text-3xl md:text-4xl font-bold font-heading tracking-tight">
-              Our <span className="gradient-text">Blog</span>
+              {t("title")} <span className="gradient-text">Blog</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Insights and tutorials from our development team. We share what
-              we're learning and building.
+              {t("description")}
             </p>
           </motion.div>
         </div>
@@ -122,7 +122,7 @@ export default function BlogPreview() {
         <div className="flex justify-center mt-10">
           <Button asChild className="group">
             <Link href="/blog">
-              View All Posts
+              {t("cta")}
               <HiArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

@@ -1,0 +1,165 @@
+{
+  "hero": {
+    "title": "We Build",
+    "digitalProducts": "Digital Products",
+    "lightningSpeed": "At Lightning Speed",
+    "description": "A small team of passionate developers creating cutting-edge mobile and web applications. We bring your ideas to life quickly and efficiently.",
+    "chip" : "Fast & Innovative Solutions",
+    "cta": "Get Started",
+    "viewOurWork": "View Our Work",
+    "rapidDelivery": "Rapid Delivery"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "cta" : "Get In Touch"
+  },
+  "partners" : {
+    "title": "Trusted by innovatives companies"
+  },
+  "services" : {
+    "title": "Our Services",
+    "description": "We offer a comprehensive range of software development services to help your business thrive in the digital landscape.",
+    "mobile": {
+      "title": "Mobile Development",
+      "description": "Fast, beautiful Flutter apps for iOS and Android with seamless user experiences and native performance."
+    },
+    "web": {
+      "title": "Web Development",
+      "description": "Modern web applications using React, Next.js, and Angular with responsive designs and optimized performance."
+    },
+    "uiux": {
+      "title": "UI/UX Design",
+      "description": "User-centered design that creates intuitive, engaging, and accessible digital experiences."
+    },
+    "backend": {
+      "title": "Backend Development",
+      "description": "Powerful backend solutions using Rust, Python, Go, and Node.js for high-performance applications."
+    },
+    "cloud": {
+      "title": "Cloud Services",
+      "description": "Cloud infrastructure setup and management on AWS, Azure, and Google Cloud Platform."
+    },
+    "database": {
+      "title": "Database Solutions",
+      "description": "Scalable database architecture with SQL and NoSQL solutions optimized for performance."
+    },
+    "analytics": {
+      "title": "Analytics & AI",
+      "description": "Data analytics solutions and AI integration to drive business intelligence and automation."
+    },
+    "rapid": {
+      "title": "Rapid Development",
+      "description": "Agile processes and efficient workflows that deliver high-quality products in record time."
+    }
+  },
+  "about" : {
+    "title": "About",
+    "description1" : " We're a small team of passionate developers who do what we love — creating exceptional digital products with speed and precision. Our name 'DenkiLab' combines the Japanese word for electricity (Denki) with 'Lab' to represent our fast, energetic approach to development.",
+    "description2" : "Being a compact team allows us to move quickly, communicate effectively, and deliver results without the overhead of larger agencies. We specialize in Flutter for mobile, modern web frameworks, and powerful backend solutions.",
+
+    "benefits" : {
+      "small" : "Small, agile team of 3 developers",
+      "fast" : "Fast turnaround times",
+      "quality" : "Focused on quality code",
+      "communication" : "Direct communication with developers",
+      "delivery" : "Continuous delivery approach",
+      "passion" : "Passion for new technologies"
+    }
+  },
+  "portfolio" : {
+    "title" : "Our",
+    "description" : "Explore our recent projects and see how we've helped businesses transform their digital presence."
+  },
+  "blog" : {
+    "title" : "Our",
+    "description" : "Insights and tutorials from our development team. We share what we're learning and building.",
+    "cta" : "View All Posts"
+  },
+  "testimonials" : {
+    "title" : "Client Testimonials",
+    "description" : "Don't just take our word for it. Here's what our clients have to say about working with us.",
+    "testimonials" : [
+      {
+        "content" : "ByteForge transformed our business with a custom e-commerce platform that increased our online sales by 200% in just six months.",
+        "author" : {
+          "name" : "Sarah Johnson",
+          "company" : "Tech Solutions Inc.",
+          "image" : "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content" : "ByteForge transformed our business with a custom e-commerce platform that increased our online sales by 200% in just six months.",
+        "author" : {
+          "name" : "Sarah Johnson",
+          "company" : "Tech Solutions Inc.",
+          "image" : "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content" : "ByteForge transformed our business with a custom e-commerce platform that increased our online sales by 200% in just six months.",
+        "author" : {
+          "name" : "Sarah Johnson",
+          "company" : "Tech Solutions Inc.",
+          "image" : "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content" : "ByteForge transformed our business with a custom e-commerce platform that increased our online sales by 200% in just six months.",
+        "author" : {
+          "name" : "Sarah Johnson",
+          "company" : "Tech Solutions Inc.",
+          "image" : "/testimonials/sarah.jpg"
+        }
+      }
+    ]
+  },
+  "cta" : {
+    "title" : "Ready to transform your digital presence?",
+    "description" : "Let's discuss how our software development expertise can help your business grow. Schedule a free consultation today.",
+    "cta" : "Get in Touch",
+    "explore" : "Explore Services"
+  },
+  "contact" : {
+    "title" : "Get in Touch",
+    "description" : "Have a project in mind? Let's discuss how we can help bring your ideas to life.",
+    "information" : {
+      "title" : "Contact Information",
+      "description" : "Fill out the form or contact us directly using the information below.",
+      "email" : "Email",
+      "phone" : "Phone",
+      "office" : "Office"
+    },
+    "form" : {
+      "title" : "Send a Message",
+      "description" : "We'd love to hear from you. Fill out the form below.",
+      "name" : "Name",
+      "subject" : "Subject",
+      "email" : "Email",
+      "message" : "Message",
+      "submit" : "Send Message",
+      "placeholders" : {
+        "name" : "Your Name",
+        "subject" : "Project inquiry",
+        "email" : "Your Email",
+        "message" : "Tell us about your project..."
+      }
+    }
+  },
+  "footer" : {
+    "title" : "DenkiLab",
+    "description" : "We build cutting-edge web and mobile applications using the latest technologies.",
+    "links" : {
+      "title" : "Quick Links",
+      "services" : "Services",
+      "about" : "About",
+      "contact" : "Contact",
+      "blog" : "Blog"
+    },
+    "copyright" : "© 2025 DenkiLab. All rights reserved.",
+    "privacy" : "Privacy Policy",
+    "terms" : "Terms of Service"
+  }
+}

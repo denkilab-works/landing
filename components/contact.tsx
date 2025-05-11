@@ -15,8 +15,9 @@ import {
   HiPaperAirplane,
   HiCheckCircle,
 } from "react-icons/hi2";
-
+import { useTranslations } from "next-intl";
 export default function Contact() {
+  const t = useTranslations("contact");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,11 +45,19 @@ export default function Contact() {
             className="space-y-4"
           >
             <h2 className="text-3xl md:text-4xl font-bold font-heading tracking-tight">
-              Get in <span className="gradient-text">Touch</span>
+              {(() => {
+                const title = t("title");
+                const words = title.split(" ");
+                const lastWord = words.pop();
+                return (
+                  <>
+                    {words.join(" ")} <span className="gradient-text">{lastWord}</span>
+                  </>
+                );
+              })()}
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Have a project in mind? Let's discuss how we can help bring your
-              ideas to life.
+              {t("description")}
             </p>
           </motion.div>
         </div>
@@ -63,11 +72,10 @@ export default function Contact() {
               <CardContent className="p-6 space-y-6">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold font-heading">
-                    Contact Information
+                    {t("information.title")}
                   </h3>
                   <p className="text-muted-foreground">
-                    Fill out the form or contact us directly using the
-                    information below.
+                    {t("information.description")}
                   </p>
                 </div>
 
@@ -75,7 +83,7 @@ export default function Contact() {
                   <div className="flex items-start space-x-4">
                     <HiEnvelope className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium">Email</p>
+                      <p className="font-medium">{t("information.email")}</p>
                       <p className="text-muted-foreground">
                         hello@byteforge.dev
                       </p>
@@ -85,7 +93,7 @@ export default function Contact() {
                   <div className="flex items-start space-x-4">
                     <HiPhone className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium">Phone</p>
+                      <p className="font-medium">{t("information.phone")}</p>
                       <p className="text-muted-foreground">+1 (555) 123-4567</p>
                     </div>
                   </div>
@@ -93,7 +101,7 @@ export default function Contact() {
                   <div className="flex items-start space-x-4">
                     <HiMapPin className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium">Office</p>
+                      <p className="font-medium">{t("information.office")}</p>
                       <p className="text-muted-foreground">
                         123 Tech Street, San Francisco, CA 94107
                       </p>
@@ -141,28 +149,28 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
                       <h3 className="text-2xl font-bold font-heading">
-                        Send a Message
+                        {t("form.title")}
                       </h3>
                       <p className="text-muted-foreground">
-                        We'd love to hear from you. Fill out the form below.
+                        {t("form.description")}
                       </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label htmlFor="name" className="text-sm font-medium">
-                          Name
+                          {t("form.name")}
                         </label>
-                        <Input id="name" placeholder="Your name" required />
+                        <Input id="name" placeholder={t("form.placeholders.name")} required />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="email" className="text-sm font-medium">
-                          Email
+                          {t("form.email")}
                         </label>
                         <Input
                           id="email"
                           type="email"
-                          placeholder="Your email"
+                          placeholder={t("form.placeholders.email")}
                           required
                         />
                       </div>
@@ -170,22 +178,22 @@ export default function Contact() {
 
                     <div className="space-y-2">
                       <label htmlFor="subject" className="text-sm font-medium">
-                        Subject
+                        {t("form.subject")}
                       </label>
                       <Input
                         id="subject"
-                        placeholder="Project inquiry"
+                        placeholder={t("form.placeholders.subject")}
                         required
                       />
                     </div>
 
                     <div className="space-y-2">
                       <label htmlFor="message" className="text-sm font-medium">
-                        Message
+                        {t("form.message")}
                       </label>
                       <Textarea
                         id="message"
-                        placeholder="Tell us about your project..."
+                        placeholder={t("form.placeholders.message")}
                         className="min-h-[120px]"
                         required
                       />
@@ -222,7 +230,7 @@ export default function Contact() {
                         </span>
                       ) : (
                         <span className="flex items-center">
-                          Send Message
+                          {t("form.submit")}
                           <HiPaperAirplane className="ml-2 h-4 w-4" />
                         </span>
                       )}

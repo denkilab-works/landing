@@ -1,0 +1,164 @@
+{
+  "hero": {
+    "title": "Creiamo",
+    "digitalProducts": "Prodotti Digitali",
+    "lightningSpeed": "alla Velocità della Luce",
+    "description": "Un piccolo team di sviluppatori appassionati che crea applicazioni mobili e web all'avanguardia. Diamo vita alle tue idee rapidamente ed efficacemente.",
+    "chip": "Soluzioni Veloci & Innovative",
+    "cta": "Iniziamo",
+    "viewOurWork": "Guarda i Nostri Lavori",
+    "rapidDelivery": "Consegna Rapida"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "services": "Servizi",
+    "contact": "Contatti",
+    "cta" : "Contattaci"
+  },
+  "partners": {
+    "title": "Scelti da aziende innovative"
+  },
+  "services": {
+    "title": "I Nostri Servizi",
+    "description": "Offriamo una gamma completa di servizi di sviluppo software per aiutare la tua azienda a prosperare nel panorama digitale.",
+    "mobile": {
+      "title": "Sviluppo Mobile",
+      "description": "App Flutter veloci e belle per iOS e Android con esperienze utente fluide e prestazioni native."
+    },
+    "web": {
+      "title": "Sviluppo Web",
+      "description": "Applicazioni web moderne utilizzando React, Next.js e Angular con design responsive e prestazioni ottimizzate."
+    },
+    "uiux": {
+      "title": "Design UI/UX",
+      "description": "Design incentrato sull'utente che crea esperienze digitali intuitive, coinvolgenti e accessibili."
+    },
+    "backend": {
+      "title": "Sviluppo Backend",
+      "description": "Potenti soluzioni backend utilizzando Rust, Python, Go e Node.js per applicazioni ad alte prestazioni."
+    },
+    "cloud": {
+      "title": "Servizi Cloud",
+      "description": "Configurazione e gestione dell'infrastruttura cloud su AWS, Azure e Google Cloud Platform."
+    },
+    "database": {
+      "title": "Soluzioni Database",
+      "description": "Architettura di database scalabile con soluzioni SQL e NoSQL ottimizzate per le prestazioni."
+    },
+    "analytics": {
+      "title": "Analisi & IA",
+      "description": "Soluzioni di analisi dei dati e integrazione dell'IA per guidare l'intelligenza aziendale e l'automazione."
+    },
+    "rapid": {
+      "title": "Sviluppo Rapido",
+      "description": "Processi agili e flussi di lavoro efficienti che forniscono prodotti di alta qualità in tempi record."
+    }
+  },
+  "about": {
+    "title": "Chi è",
+    "description1": "Siamo un piccolo team di sviluppatori appassionati che fanno ciò che amano — creare prodotti digitali eccezionali con velocità e precisione. Il nostro nome 'DenkiLab' combina la parola giapponese per elettricità (Denki) con 'Lab' per rappresentare il nostro approccio veloce ed energico allo sviluppo.",
+    "description2": "Essere un team compatto ci permette di muoverci rapidamente, comunicare efficacemente e fornire risultati senza i costi aggiuntivi delle agenzie più grandi. Ci specializziamo in Flutter per il mobile, framework web moderni e potenti soluzioni backend.",
+    "benefits": {
+      "small" : "Piccolo team agile di 3 sviluppatori",
+      "fast" : "Tempi di consegna rapidi",
+      "quality" : "Focalizzati sulla qualità del codice",
+      "communication" : "Comunicazione diretta con gli sviluppatori",
+      "delivery" : "Approccio di consegna continua",
+      "passion" : "Passione per le nuove tecnologie"
+    }
+  },
+  "portfolio": {
+    "title": "Il Nostro",
+    "description": "Esplora i nostri progetti recenti e scopri come abbiamo aiutato le aziende a trasformare la loro presenza digitale."
+  },
+  "blog": {
+    "title": "Il Nostro",
+    "description": "Approfondimenti e tutorial dal nostro team di sviluppo. Condividiamo ciò che stiamo imparando e costruendo.",
+    "cta": "Vedi Tutti i Post"
+  },
+  "testimonials": {
+    "title": "Testimonianze dei Clienti",
+    "description": "Non fidarti solo della nostra parola. Ecco cosa dicono i nostri clienti del lavoro con noi.",
+    "testimonials": [
+      {
+        "content": "ByteForge ha trasformato la nostra attività con una piattaforma e-commerce personalizzata che ha aumentato le nostre vendite online del 200% in soli sei mesi.",
+        "author": {
+          "name": "Sarah Johnson",
+          "company": "Tech Solutions Inc.",
+          "image": "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content": "ByteForge ha trasformato la nostra attività con una piattaforma e-commerce personalizzata che ha aumentato le nostre vendite online del 200% in soli sei mesi.",
+        "author": {
+          "name": "Sarah Johnson",
+          "company": "Tech Solutions Inc.",
+          "image": "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content": "ByteForge ha trasformato la nostra attività con una piattaforma e-commerce personalizzata che ha aumentato le nostre vendite online del 200% in soli sei mesi.",
+        "author": {
+          "name": "Sarah Johnson",
+          "company": "Tech Solutions Inc.",
+          "image": "/testimonials/sarah.jpg"
+        }
+      },
+      {
+        "content": "ByteForge ha trasformato la nostra attività con una piattaforma e-commerce personalizzata che ha aumentato le nostre vendite online del 200% in soli sei mesi.",
+        "author": {
+          "name": "Sarah Johnson",
+          "company": "Tech Solutions Inc.",
+          "image": "/testimonials/sarah.jpg"
+        }
+      }
+    ]
+  },
+  "cta": {
+    "title": "Pronto a trasformare la tua presenza digitale?",
+    "description": "Parliamo di come la nostra esperienza nello sviluppo software può aiutare la tua azienda a crescere. Programma oggi una consulenza gratuita.",
+    "cta": "Contattaci",
+    "explore": "Esplora i Servizi"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "description": "Hai un progetto in mente? Parliamo di come possiamo aiutarti a dare vita alle tue idee.",
+    "information": {
+      "title": "Informazioni di Contatto",
+      "description": "Compila il modulo o contattaci direttamente utilizzando le informazioni qui sotto.",
+      "email": "Email",
+      "phone": "Telefono",
+      "office": "Ufficio"
+    },
+    "form": {
+      "title": "Invia un Messaggio",
+      "description": "Ci piacerebbe sentirti. Compila il modulo qui sotto.",
+      "name": "Nome",
+      "subject": "Oggetto",
+      "email": "Email",
+      "message": "Messaggio",
+      "submit": "Invia",
+      "placeholders" : {
+        "name" : "Il tuo Nome",
+        "subject" : "Inquiry",
+        "email" : "La tua Email",
+        "message" : "Tell us about your project..."
+      }
+    }
+  },
+  "footer": {
+    "title": "DenkiLab",
+    "description": "Costruiamo applicazioni web e mobili all'avanguardia utilizzando le tecnologie più recenti.",
+    "links": {
+      "title": "Link Rapidi",
+      "services": "Servizi",
+      "about": "Chi Siamo",
+      "contact": "Contatti",
+      "blog": "Blog"
+    },
+    "copyright": "© 2025 DenkiLab. Tutti i diritti riservati.",
+    "privacy": "Politica sulla Privacy",
+    "terms": "Termini di Servizio"
+  }
+}

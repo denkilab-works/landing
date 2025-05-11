@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SiLinkedin, SiX } from "react-icons/si";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("footer");
+
   return (
     <footer className="w-full border-t bg-card/50">
       <div className="container px-4 md:px-6 py-12 md:py-16">
@@ -13,8 +16,7 @@ export default function Footer() {
               <span className="font-heading font-bold text-xl">DenkiLab</span>
             </div>
             <p className="text-muted-foreground max-w-xs">
-              We build cutting-edge web and mobile applications using the latest
-              technologies.
+              {t("description")}
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" asChild>
@@ -31,19 +33,19 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-medium text-lg">Quick Links</h3>
+            <h3 className="font-medium text-lg">{t("links.title")}</h3>
             <nav className="flex flex-col space-y-2">
               <Link
                 href="/#services"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                Services
+                {t("links.services")}
               </Link>
               <Link
                 href="/#about"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                About Us
+                {t("links.about")}
               </Link>
               <Link
                 href="/#portfolio"
@@ -61,7 +63,7 @@ export default function Footer() {
                 href="/#contact"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                Contact
+                {t("links.contact")}
               </Link>
             </nav>
           </div>
@@ -84,20 +86,20 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} DenkiLab. All rights reserved.
+            &copy; {new Date().getFullYear()} DenkiLab. {t("copyright")}
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link
               href="#"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Privacy Policy
+              {t("privacy")}
             </Link>
             <Link
               href="#"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              Terms of Service
+              {t("terms")}
             </Link>
           </div>
         </div>

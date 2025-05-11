@@ -6,19 +6,21 @@ import { Button } from "@/components/ui/button";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("navbar");
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
   const navItems = [
-    { name: "Services", href: "/#services" },
-    { name: "About", href: "/#about" },
+    { name: t("services"), href: "/#services" },
+    { name: t("about"), href: "/#about" },
     { name: "Portfolio", href: "/#portfolio" },
     { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/#contact" },
+    { name: t("contact"), href: "/#contact" },
   ];
 
   return (
@@ -52,7 +54,7 @@ export default function Header() {
               </Link>
             ))}
             <Button asChild>
-              <Link href="/#contact">Get in Touch</Link>
+              <Link href="/#contact">{t("cta")}</Link>
             </Button>
           </nav>
 
@@ -91,7 +93,7 @@ export default function Header() {
                 ))}
                 <Button asChild className="mt-2">
                   <Link href="/#contact" onClick={closeMenu}>
-                    Get in Touch
+                    {t("cta")}
                   </Link>
                 </Button>
               </nav>

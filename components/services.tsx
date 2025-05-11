@@ -19,59 +19,63 @@ import {
 } from "react-icons/hi2";
 import { HiBolt } from "react-icons/hi2";
 import { FaChartLine } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
-const services = [
+
+export default function Services() {
+  const t = useTranslations("services");
+
+  const services = [
   {
     icon: <HiDevicePhoneMobile className="h-10 w-10 text-primary" />,
-    title: "Mobile Development",
+    title: t("mobile.title"),
     description:
-      "Fast, beautiful Flutter apps for iOS and Android with seamless user experiences and native performance.",
+      t("mobile.description"),
   },
   {
     icon: <HiGlobeAmericas className="h-10 w-10 text-primary" />,
-    title: "Web Development",
+    title: t("web.title"),
     description:
-      "Modern web applications using React, Next.js, and Angular with responsive designs and optimized performance.",
+      t("web.description"),
   },
   {
     icon: <HiSwatch className="h-10 w-10 text-primary" />,
-    title: "UI/UX Design",
+    title: t("uiux.title"),
     description:
-      "User-centered design that creates intuitive, engaging, and accessible digital experiences.",
+      t("uiux.description"),
   },
   {
     icon: <HiCodeBracket className="h-10 w-10 text-primary" />,
-    title: "Backend Development",
+    title: t("backend.title"),
     description:
-      "Powerful backend solutions using Rust, Python, Go, and Node.js for high-performance applications.",
+      t("backend.description"),
   },
   {
     icon: <HiServer className="h-10 w-10 text-primary" />,
-    title: "Cloud Services",
+    title: t("cloud.title"),
     description:
-      "Cloud infrastructure setup and management on AWS, Azure, and Google Cloud Platform.",
+      t("cloud.description"),
   },
   {
     icon: <HiCircleStack className="h-10 w-10 text-primary" />,
-    title: "Database Solutions",
+    title: t("database.title"),
     description:
-      "Scalable database architecture with SQL and NoSQL solutions optimized for performance.",
+      t("database.description"),
   },
   {
     icon: <FaChartLine className="h-10 w-10 text-primary" />,
-    title: "Analytics & AI",
+    title: t("analytics.title"),
     description:
-      "Data analytics solutions and AI integration to drive business intelligence and automation.",
+      t("analytics.description"),
   },
   {
     icon: <HiBolt className="h-10 w-10 text-primary" />,
-    title: "Rapid Development",
+    title: t("rapid.title"),
     description:
-      "Agile processes and efficient workflows that deliver high-quality products in record time.",
+      t("rapid.description"),
   },
 ];
 
-export default function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
@@ -86,11 +90,19 @@ export default function Services() {
             className="space-y-4"
           >
             <h2 className="text-3xl md:text-4xl font-bold font-heading tracking-tight">
-              Our <span className="gradient-text">Services</span>
+              {(() => {
+                const title = t("title");
+                const words = title.split(" ");
+                const lastWord = words.pop();
+                return (
+                  <>
+                    {words.join(" ")} <span className="gradient-text">{lastWord}</span>
+                  </>
+                );
+              })()}
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              We offer a comprehensive range of software development services to
-              help your business thrive in the digital landscape.
+              {t("description")}
             </p>
           </motion.div>
         </div>

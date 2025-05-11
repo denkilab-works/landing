@@ -9,8 +9,10 @@ import {
   HiGlobeAmericas,
 } from "react-icons/hi2";
 import { HiBolt } from "react-icons/hi2";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations();
   return (
     <section className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
       {/* Background gradient */}
@@ -32,30 +34,28 @@ export default function Hero() {
           >
             <div className="inline-flex items-center space-x-2 bg-secondary/50 backdrop-blur-sm px-3 py-1 rounded-full w-fit">
               <span className="text-xs font-medium text-primary">
-                Fast & Innovative Solutions
+                {t("hero.chip")}
               </span>
             </div>
 
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              We Build <span className="gradient-text">Digital Products</span>{" "}
-              At Lightning Speed
+              {t("hero.title")} <span className="gradient-text">{t("hero.digitalProducts")}</span>{" "}
+              {t("hero.lightningSpeed")}
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl">
-              A small team of passionate developers creating cutting-edge mobile
-              and web applications. We bring your ideas to life quickly and
-              efficiently.
+              {t("hero.description")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg" className="group">
                 <Link href="#contact">
-                  Get Started
+                  {t("hero.cta")}
                   <HiArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="#portfolio">View Our Work</Link>
+                <Link href="#portfolio">{t("hero.viewOurWork")}</Link>
               </Button>
             </div>
           </motion.div>
@@ -106,7 +106,7 @@ export default function Hero() {
                 className="absolute bottom-0 left-0 p-4 bg-secondary rounded-lg shadow-lg"
               >
                 <HiBolt className="h-8 w-8 text-primary" />
-                <p className="mt-2 text-sm font-medium">Rapid Delivery</p>
+                <p className="mt-2 text-sm font-medium">{t("hero.rapidDelivery")}</p>
               </motion.div>
 
               {/* Central element */}
@@ -131,7 +131,7 @@ export default function Hero() {
           className="mt-20 pt-10 border-t border-border/50"
         >
           <p className="text-sm text-muted-foreground text-center mb-6">
-            Trusted by innovative companies
+            {t("partners.title")}
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-items-center opacity-70">
             {[
