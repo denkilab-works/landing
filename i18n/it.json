@@ -14,7 +14,7 @@
     "about": "Chi Siamo",
     "services": "Servizi",
     "contact": "Contatti",
-    "cta" : "Contattaci"
+    "cta": "Contattaci"
   },
   "partners": {
     "title": "Scelti da aziende innovative"
@@ -60,12 +60,12 @@
     "description1": "Siamo un piccolo team di sviluppatori appassionati che fanno ciò che amano — creare prodotti digitali eccezionali con velocità e precisione. Il nostro nome 'DenkiLab' combina la parola giapponese per elettricità (Denki) con 'Lab' per rappresentare il nostro approccio veloce ed energico allo sviluppo.",
     "description2": "Essere un team compatto ci permette di muoverci rapidamente, comunicare efficacemente e fornire risultati senza i costi aggiuntivi delle agenzie più grandi. Ci specializziamo in Flutter per il mobile, framework web moderni e potenti soluzioni backend.",
     "benefits": {
-      "small" : "Piccolo team agile di 3 sviluppatori",
-      "fast" : "Tempi di consegna rapidi",
-      "quality" : "Focalizzati sulla qualità del codice",
-      "communication" : "Comunicazione diretta con gli sviluppatori",
-      "delivery" : "Approccio di consegna continua",
-      "passion" : "Passione per le nuove tecnologie"
+      "small": "Piccolo team agile di 3 sviluppatori",
+      "fast": "Tempi di consegna rapidi",
+      "quality": "Focalizzati sulla qualità del codice",
+      "communication": "Comunicazione diretta con gli sviluppatori",
+      "delivery": "Approccio di consegna continua",
+      "passion": "Passione per le nuove tecnologie"
     }
   },
   "portfolio": {
@@ -139,17 +139,17 @@
       "email": "Email",
       "message": "Messaggio",
       "submit": "Invia",
-      "placeholders" : {
-        "name" : "Il tuo Nome",
-        "subject" : "Inquiry",
-        "email" : "La tua Email",
-        "message" : "Tell us about your project..."
+      "placeholders": {
+        "name": "Il tuo Nome",
+        "subject": "Inquiry",
+        "email": "La tua Email",
+        "message": "Tell us about your project..."
       }
     }
   },
   "footer": {
     "title": "DenkiLab",
-    "description": "Costruiamo applicazioni web e mobili all'avanguardia utilizzando le tecnologie più recenti.",
+    "description": "Costruiamo applicazioni web e mobile all'avanguardia utilizzando le tecnologie più recenti.",
     "links": {
       "title": "Link Rapidi",
       "services": "Servizi",
