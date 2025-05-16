@@ -15,38 +15,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { HiCalendar, HiArrowRight } from "react-icons/hi2";
 import { useTranslations } from "next-intl";
-// Sample blog posts for preview - in a real app, these would be fetched from the API
-const featuredPosts = [
-  {
-    slug: "flutter-vs-react-native",
-    title: "Flutter vs React Native in 2023: Which One to Choose?",
-    date: "June 15, 2023",
-    category: "Mobile Development",
-    excerpt:
-      "An in-depth comparison of Flutter and React Native for mobile app development in 2023.",
-    image: "/placeholder.svg?height=400&width=600&text=Flutter+vs+React+Native",
-  },
-  {
-    slug: "rust-for-web-development",
-    title: "Using Rust for Backend Web Development",
-    date: "July 22, 2023",
-    category: "Backend Development",
-    excerpt:
-      "Why Rust is becoming a popular choice for building high-performance web services.",
-    image: "/placeholder.svg?height=400&width=600&text=Rust+Backend",
-  },
-  {
-    slug: "nextjs-15-overview",
-    title: "Next.js 15: What's New and Exciting",
-    date: "August 5, 2023",
-    category: "Web Development",
-    excerpt:
-      "Exploring the latest features in Next.js 15 and how they improve development experience.",
-    image: "/placeholder.svg?height=400&width=600&text=Next.js+15",
-  },
-];
+import { Post } from "@/lib/blog";
 
-export default function BlogPreview() {
+
+export default function BlogPreview({ posts} : { posts: Post[] }) {
   const t = useTranslations("blog");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
@@ -74,7 +46,7 @@ export default function BlogPreview() {
           ref={ref}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
         >
-          {featuredPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -82,7 +54,7 @@ export default function BlogPreview() {
               transition={{ duration: 0.5, delay: 0.1 * index }}
             >
               <Card className="h-full overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-colors">
-                <Link href={`/blog/${post.slug}`}>
+                <Link href={`/${post.locale}/blog/${post.slug}`}>
                   <div className="relative h-48 w-full overflow-hidden">
                     <Image
                       src={
@@ -121,7 +93,7 @@ export default function BlogPreview() {
 
         <div className="flex justify-center mt-10">
           <Button asChild className="group">
-            <Link href="/blog">
+            <Link href={`/$locale}/blog`}>
               {t("cta")}
               <HiArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>

@@ -2,20 +2,22 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { getPostBySlug, getAllPosts } from "@/lib/blog";
+import { getPostBySlug, getAllPosts, getPostLocales } from "@/lib/blog";
 import { Badge } from "@/components/ui/badge";
-import { HiCalendar, HiClock, HiArrowLeft, HiTag } from "react-icons/hi2";
+import { HiCalendar, HiClock, HiArrowLeft, HiTag, HiLanguage } from "react-icons/hi2";
 
 type BlogPostPageProps = {
   params: {
     slug: string;
+    locale: string;
   };
 };
 
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const {locale, slug } = await params;
+  const post = await getPostBySlug(slug, locale);
 
   if (!post) {
     return {
@@ -43,14 +45,20 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
+  const locales = ["en", "it"]; // Add all supported locales here
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.flatMap((post) =>
+    locales.map((locale) => ({
+      slug: post.slug,
+      locale,
+    }))
+  );
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug);
+  const {locale, slug } = await params;
+  const post = await getPostBySlug(slug, locale);
+  const availableLocales = await getPostLocales(slug);
 
   if (!post) {
     notFound();
@@ -60,7 +68,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <div className="container py-24 md:py-32 max-w-4xl">
       <div className="mb-8">
         <Link
-          href="/blog"
+          href={`/${locale}/blog`}
           className="flex items-center text-muted-foreground hover:text-foreground mb-8"
         >
           <HiArrowLeft className="mr-2 h-4 w-4" />
@@ -86,7 +94,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <HiClock className="mr-1 h-4 w-4" />
             <span>{post.readingTime} min read</span>
           </div>
-          <div>
+          {availableLocales.length > 1 && (
+          <div className="flex space-x-2 items-center justify-end">
+            <HiLanguage className="h-4 w-4 text-muted-foreground" />
+            <div className="text-sm text-muted-foreground">
+              {availableLocales.map((locale, i) => (
+                <span key={locale} className="inline-block">
+                  {i > 0 && ", "}
+                  <Link
+                    href={`/${locale}/blog/${slug}`}
+                    className={`hover:text-primary ${
+                      locale === locale ? "font-medium" : ""
+                    }`}
+                  >
+                    {locale.toUpperCase()}
+                  </Link>
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+         <div>
             By <span className="font-medium">{post.author}</span>
           </div>
         </div>
@@ -113,7 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.tags.map((tag, i) => (
               <span key={i} className="inline-block">
                 {i > 0 && ", "}
-                <Link href={`/blog/tags/${tag}`} className="hover:text-primary">
+                <Link href={`/${locale}/blog/tags/${tag}`} className="hover:text-primary">
                   {tag}
                 </Link>
               </span>

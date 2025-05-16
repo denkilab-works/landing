@@ -13,14 +13,25 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { HiCalendar, HiClock } from "react-icons/hi2";
 
-export const metadata: Metadata = {
-  title: "Blog | DenkiLab",
-  description:
-    "Insights, tutorials, and news from the DenkiLab team on mobile and web development.",
+type BlogPageProps = {
+  params: {
+    locale: string;
+  };
 };
 
-export default async function BlogPage() {
-  const posts = await getAllPosts();
+export async function generateMetadata({
+  params,
+}: BlogPageProps): Promise<Metadata> {
+  return {
+    title: "Blog | DenkiLab",
+    description:
+      "Insights, tutorials, and news from the DenkiLab team on mobile and web development.",
+  };
+}
+
+export default async function BlogPage({ params }: BlogPageProps) {
+  const {locale} = await params;
+  const posts = await getAllPosts(locale);
 
   return (
     <div className="container py-24 md:py-32">
@@ -40,7 +51,7 @@ export default async function BlogPage() {
             key={post.slug}
             className="overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-colors"
           >
-            <Link href={`/blog/${post.slug}`}>
+            <Link href={`/${locale}/blog/${post.slug}`}>
               <div className="relative h-48 w-full overflow-hidden">
                 <Image
                   src={post.image || "/placeholder.svg?height=400&width=600"}

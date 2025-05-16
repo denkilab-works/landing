@@ -1,5 +1,8 @@
 import type React from "react"
 import { compileMDX } from "next-mdx-remote/rsc"
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
 
 export type Post = {
   slug: string
@@ -12,146 +15,104 @@ export type Post = {
   readingTime: number
   tags: string[]
   content: React.ReactNode
+  locale: string
 }
 
-// Sample blog posts - in a real app these would come from MDX files
-const blogPosts: Omit<Post, "content">[] = [
-  {
-    slug: "flutter-vs-react-native",
-    title: "Flutter vs React Native in 2023: Which One to Choose?",
-    date: "June 15, 2023",
-    category: "Mobile Development",
-    excerpt: "An in-depth comparison of Flutter and React Native for mobile app development in 2023.",
-    image: "/placeholder.svg?height=400&width=600&text=Flutter+vs+React+Native",
-    author: "Hikari Tanaka",
-    readingTime: 8,
-    tags: ["Flutter", "React Native", "Mobile Development"],
-  },
-  {
-    slug: "rust-for-web-development",
-    title: "Using Rust for Backend Web Development",
-    date: "July 22, 2023",
-    category: "Backend Development",
-    excerpt: "Why Rust is becoming a popular choice for building high-performance web services.",
-    image: "/placeholder.svg?height=400&width=600&text=Rust+Backend",
-    author: "Kenji Watanabe",
-    readingTime: 10,
-    tags: ["Rust", "Backend", "WebDev"],
-  },
-  {
-    slug: "nextjs-15-overview",
-    title: "Next.js 15: What's New and Exciting",
-    date: "August 5, 2023",
-    category: "Web Development",
-    excerpt: "Exploring the latest features in Next.js 15 and how they improve development experience.",
-    image: "/placeholder.svg?height=400&width=600&text=Next.js+15",
-    author: "Mai Suzuki",
-    readingTime: 6,
-    tags: ["Next.js", "React", "Web Development"],
-  },
-  {
-    slug: "ai-in-app-development",
-    title: "Integrating AI Features in Modern Apps",
-    date: "September 10, 2023",
-    category: "AI & Development",
-    excerpt: "How to effectively integrate AI capabilities into your web and mobile applications.",
-    image: "/placeholder.svg?height=400&width=600&text=AI+Integration",
-    author: "Hikari Tanaka",
-    readingTime: 12,
-    tags: ["AI", "Development", "Integration"],
-  },
-  {
-    slug: "golang-microservices",
-    title: "Building Microservices with Go",
-    date: "October 3, 2023",
-    category: "Backend Development",
-    excerpt: "A practical approach to designing and implementing microservices architecture using Go.",
-    image: "/placeholder.svg?height=400&width=600&text=Go+Microservices",
-    author: "Kenji Watanabe",
-    readingTime: 9,
-    tags: ["Go", "Microservices", "Architecture"],
-  },
-  {
-    slug: "flutter-animations",
-    title: "Creating Beautiful Animations in Flutter",
-    date: "November 18, 2023",
-    category: "Mobile Development",
-    excerpt: "A deep dive into Flutter's animation system and how to create engaging user experiences.",
-    image: "/placeholder.svg?height=400&width=600&text=Flutter+Animations",
-    author: "Mai Suzuki",
-    readingTime: 7,
-    tags: ["Flutter", "Animations", "UI/UX"],
-  },
-]
+const postsDirectory = path.join(process.cwd(), "posts")
 
-// Sample MDX content for blog posts
-const postContent = `
-# Introduction
+// Function to get all blog posts for a specific locale
+export async function getAllPosts(locale: string = "en"): Promise<Post[]> {
+  const localeDir = path.join(postsDirectory, locale)
 
-This is a sample blog post demonstrating MDX capabilities. In a real implementation, this content would come from actual MDX files stored in your project or a CMS.
+  // If locale directory doesn't exist, fallback to English
+  if (!fs.existsSync(localeDir)) {
+    console.warn(`Locale directory for ${locale} not found, falling back to English`)
+    return getAllPosts("en")
+  }
 
-## Key Points
+  const files = fs.readdirSync(localeDir)
+  const mdxFiles = files.filter((file) => file.endsWith(".mdx"))
 
-- MDX combines the power of Markdown with JSX
-- It allows embedding React components within your content
-- Perfect for blog posts, documentation, and more
+  const posts = await Promise.all(
+    mdxFiles.map(async (file) => {
+      const filePath = path.join(localeDir, file)
+      const fileContent = fs.readFileSync(filePath, "utf8")
+      const { data, content } = matter(fileContent)
+      const slug = file.replace(/\.mdx$/, "")
 
-## Code Example
-
-\`\`\`typescript
-function greet(name: string): string {
-  return \`Hello, \${name}!\`;
-}
-
-console.log(greet('Reader'));
-\`\`\`
-
-## Next Steps
-
-1. Replace this placeholder content with real MDX files
-2. Add more styling to your blog
-3. Consider adding features like comments, sharing, etc.
-
-![Placeholder Image](/placeholder.svg?height=300&width=600)
-
-> "The best way to predict the future is to invent it." - Alan Kay
-`
-
-// Function to get all blog posts
-export async function getAllPosts(): Promise<Post[]> {
-  // In a real app, you would read MDX files from the file system
-  // For this example, we're using the sample data above
-
-  return Promise.all(
-    blogPosts.map(async (post) => {
-      const { content } = await compileMDX({
-        source: postContent,
+      const { content: compiledContent } = await compileMDX({
+        source: content,
         options: { parseFrontmatter: true },
       })
 
       return {
-        ...post,
-        content,
+        slug,
+        title: data.title || "Untitled",
+        date: data.date || new Date().toISOString(),
+        category: data.category || "Uncategorized",
+        excerpt: data.excerpt || "",
+        image: data.image,
+        author: data.author || "Anonymous",
+        readingTime: data.readingTime || 5,
+        tags: data.tags || [],
+        content: compiledContent,
+        locale,
       }
-    }),
+    })
   )
+
+  // Sort posts by date in descending order
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-// Function to get a single blog post by slug
-export async function getPostBySlug(slug: string): Promise<Post | null> {
-  const post = blogPosts.find((p) => p.slug === slug)
+export async function getLatestPosts(locale: string = "en"): Promise<Post[]> {
+  const posts = await getAllPosts(locale)
+  return posts.slice(0, 3)
+}
 
-  if (!post) {
+// Function to get a single blog post by slug and locale
+export async function getPostBySlug(slug: string, locale: string = "en"): Promise<Post | null> {
+  try {
+    const localeDir = path.join(postsDirectory, locale)
+    const filePath = path.join(localeDir, `${slug}.mdx`)
+
+    // If post doesn't exist in requested locale, try English
+    if (!fs.existsSync(filePath) && locale !== "en") {
+      console.warn(`Post ${slug} not found in ${locale}, falling back to English`)
+      return getPostBySlug(slug, "en")
+    }
+
+    const fileContent = fs.readFileSync(filePath, "utf8")
+    const { data, content } = matter(fileContent)
+
+    const { content: compiledContent } = await compileMDX({
+      source: content,
+      options: { parseFrontmatter: true },
+    })
+
+    return {
+      slug,
+      title: data.title || "Untitled",
+      date: data.date || new Date().toISOString(),
+      category: data.category || "Uncategorized",
+      excerpt: data.excerpt || "",
+      image: data.image,
+      author: data.author || "Anonymous",
+      readingTime: data.readingTime || 5,
+      tags: data.tags || [],
+      content: compiledContent,
+      locale,
+    }
+  } catch (error) {
     return null
   }
+}
 
-  const { content } = await compileMDX({
-    source: postContent,
-    options: { parseFrontmatter: true },
+// Function to get available locales for a post
+export async function getPostLocales(slug: string): Promise<string[]> {
+  const locales = fs.readdirSync(postsDirectory)
+  return locales.filter(locale => {
+    const filePath = path.join(postsDirectory, locale, `${slug}.mdx`)
+    return fs.existsSync(filePath)
   })
-
-  return {
-    ...post,
-    content,
-  }
 }

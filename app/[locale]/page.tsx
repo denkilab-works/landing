@@ -7,6 +7,7 @@ import Testimonials from "@/components/testimonials"
 import Contact from "@/components/contact"
 import CTA from "@/components/cta"
 import BlogPreview from "@/components/blog-preview"
+import { getLatestPosts } from "@/lib/blog"
 
 export const metadata: Metadata = {
   title: "DenkiLab | Modern Software Development Agency",
@@ -31,14 +32,16 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Home() {
+export default async function Home({ params }: { params : Promise<{locale: string}>}) {
+  const { locale } = await params;
+  const posts = await getLatestPosts(locale);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Hero />
       <Services />
       <About />
       <Portfolio />
-      <BlogPreview />
+      <BlogPreview posts={posts} />
       <Testimonials />
       <CTA />
       <Contact />
