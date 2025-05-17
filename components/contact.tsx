@@ -16,6 +16,10 @@ import {
   HiCheckCircle,
 } from "react-icons/hi2";
 import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
+
+const WorldMap = dynamic(() => import("./ui/world-map"), { ssr: false });
+
 export default function Contact() {
   const t = useTranslations("contact");
   const ref = useRef(null);
@@ -51,7 +55,8 @@ export default function Contact() {
                 const lastWord = words.pop();
                 return (
                   <>
-                    {words.join(" ")} <span className="gradient-text">{lastWord}</span>
+                    {words.join(" ")}
+                    <span className="gradient-text">{lastWord}</span>
                   </>
                 );
               })()}
@@ -111,7 +116,14 @@ export default function Contact() {
 
                 <div className="pt-6">
                   <div className="h-64 w-full rounded-lg bg-muted flex items-center justify-center">
-                    <p className="text-muted-foreground">Map placeholder</p>
+                    <WorldMap
+                      dots={[
+                        {
+                          start: { lat: 43.7102, lng: 7.262, label: "Nice" },
+                          end: { lat: 13.7642, lng: 20.22, label: "Milano" },
+                        },
+                      ]}
+                    />
                   </div>
                 </div>
               </CardContent>
@@ -161,7 +173,11 @@ export default function Contact() {
                         <label htmlFor="name" className="text-sm font-medium">
                           {t("form.name")}
                         </label>
-                        <Input id="name" placeholder={t("form.placeholders.name")} required />
+                        <Input
+                          id="name"
+                          placeholder={t("form.placeholders.name")}
+                          required
+                        />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="email" className="text-sm font-medium">
