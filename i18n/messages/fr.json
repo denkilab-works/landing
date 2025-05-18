@@ -14,7 +14,7 @@
     "about": "À Propos",
     "services": "Services",
     "contact": "Contact",
-    "cta" : "Contactez-Nous"
+    "cta": "Contactez-Nous"
   },
   "partners": {
     "title": "Fait confiance par des entreprises innovantes"
@@ -60,12 +60,12 @@
     "description1": "Nous sommes une petite équipe de développeurs passionnés qui font ce qu'ils aiment — créer des produits numériques exceptionnels avec rapidité et précision. Notre nom 'DenkiLab' combine le mot japonais pour électricité (Denki) avec 'Lab' pour représenter notre approche rapide et énergique du développement.",
     "description2": "Être une équipe compacte nous permet de bouger rapidement, de communiquer efficacement et de livrer des résultats sans les contraintes des grandes agences. Nous sommes spécialisés dans Flutter pour le mobile, les frameworks web modernes et les solutions backend puissantes.",
     "benefits": {
-      "small" : "Petite équipe agile de 3 développeurs",
-      "fast" : "Délais de livraison rapides",
-      "quality" : "Concentration sur la qualité du code",
-      "communication" : "Communication directe avec les développeurs",
-      "delivery" : "Approche de livraison continue",
-      "passion" : "Passion pour les nouvelles technologies"
+      "small": "Petite équipe agile de 3 développeurs",
+      "fast": "Délais de livraison rapides",
+      "quality": "Concentration sur la qualité du code",
+      "communication": "Communication directe avec les développeurs",
+      "delivery": "Approche de livraison continue",
+      "passion": "Passion pour les nouvelles technologies"
     }
   },
   "portfolio": {
@@ -128,8 +128,8 @@
       "title": "Informations de Contact",
       "description": "Remplissez le formulaire ou contactez-nous directement en utilisant les informations ci-dessous.",
       "email": "Email",
-      "phone": "Téléphone",
-      "office": "Bureau"
+      "phone": "Telegram",
+      "office": "Notre position"
     },
     "form": {
       "title": "Envoyez un Message",
@@ -139,11 +139,11 @@
       "email": "Email",
       "message": "Message",
       "submit": "Envoyer le Message",
-      "placeholders" : {
-        "name" : "Votre Nom",
-        "subject" : "Inquiry",
-        "email" : "Votre Email",
-        "message" : "Tell us about your project..."
+      "placeholders": {
+        "name": "Votre Nom",
+        "subject": "De quoi as-tu besoin?",
+        "email": "Votre Email",
+        "message": "Parle-nous de ton projet!"
       }
     }
   },

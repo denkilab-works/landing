@@ -128,8 +128,8 @@
       "title": "Informazioni di Contatto",
       "description": "Compila il modulo o contattaci direttamente utilizzando le informazioni qui sotto.",
       "email": "Email",
-      "phone": "Telefono",
-      "office": "Ufficio"
+      "phone": "Telegram",
+      "office": "Dove siamo"
     },
     "form": {
       "title": "Invia un Messaggio",
@@ -141,9 +141,9 @@
       "submit": "Invia",
       "placeholders": {
         "name": "Il tuo Nome",
-        "subject": "Inquiry",
+        "subject": "Di cosa hai bisogno?",
         "email": "La tua Email",
-        "message": "Tell us about your project..."
+        "message": "Parlaci del tuo progetto!"
       }
     }
   },

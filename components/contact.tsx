@@ -89,9 +89,7 @@ export default function Contact() {
                     <HiEnvelope className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium">{t("information.email")}</p>
-                      <p className="text-muted-foreground">
-                        hello@byteforge.dev
-                      </p>
+                      <p className="text-muted-foreground">info@denkilab.com</p>
                     </div>
                   </div>
 
@@ -99,7 +97,7 @@ export default function Contact() {
                     <HiPhone className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium">{t("information.phone")}</p>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                      <p className="text-muted-foreground">@handgull</p>
                     </div>
                   </div>
 
@@ -107,9 +105,7 @@ export default function Contact() {
                     <HiMapPin className="h-6 w-6 text-primary shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium">{t("information.office")}</p>
-                      <p className="text-muted-foreground">
-                        123 Tech Street, San Francisco, CA 94107
-                      </p>
+                      <p className="text-muted-foreground">Nice / Milano</p>
                     </div>
                   </div>
                 </div>
