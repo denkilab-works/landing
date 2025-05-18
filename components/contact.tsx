@@ -139,18 +139,17 @@ export default function Contact() {
                       <HiCheckCircle className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="text-2xl font-bold font-heading">
-                      Message Sent!
+                      {t("form.messageSent")}
                     </h3>
                     <p className="text-muted-foreground max-w-md">
-                      Thank you for reaching out. We'll get back to you as soon
-                      as possible.
+                      {t("form.thankYou")}
                     </p>
                     <Button
                       variant="outline"
                       onClick={() => setIsSubmitted(false)}
                       className="mt-4"
                     >
-                      Send Another Message
+                      {t("form.sendAnother")}
                     </Button>
                   </div>
                 ) : (

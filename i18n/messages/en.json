@@ -145,7 +145,10 @@
         "subject": "What do you need?",
         "email": "Your Email",
         "message": "Tell us about your project!"
-      }
+      },
+      "messageSent": "Message Sent!",
+      "thankYou": "Thank you for reaching out. We'll get back to you as soon as possible.",
+      "sendAnother": "Send Another Message"
     }
   },
   "footer": {

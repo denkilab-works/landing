@@ -144,7 +144,10 @@
         "subject": "Di cosa hai bisogno?",
         "email": "La tua Email",
         "message": "Parlaci del tuo progetto!"
-      }
+      },
+      "messageSent": "Messaggio inviato!",
+      "thankYou": "Grazie per averci contattato! Risponderemo il prima possiile.",
+      "sendAnother": "Manda un altro messaggio"
     }
   },
   "footer": {
