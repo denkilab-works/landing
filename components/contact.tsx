@@ -115,8 +115,8 @@ export default function Contact() {
                     <WorldMap
                       dots={[
                         {
-                          start: { lat: 43.7102, lng: 7.262, label: "Nice" },
-                          end: { lat: 13.7642, lng: 20.22, label: "Milano" },
+                          start: { lat: 2, lng: 4, label: "Nice" },
+                          end: { lat: 16, lng: 20, label: "Milano" },
                         },
                       ]}
                     />
